@@ -24,7 +24,7 @@ export class MongooseDatabase {
         this.User = new routes.User(this.User_model).router; // invoking the class by passing in a model
         // Med
         this.Med_model = model('med', schemas.Med);
-        this.Med = new routes.Med(this.Med_model, this.Med_model).router;
+        this.Med = new routes.Med(this.Med_model, this.User_model).router;
     }
     public initializeMongoose = async () => {
         const uri_auth = 'mongodb+srv://jeet343:jeet419@cluster0.vh99l.mongodb.net/techweirdo?retryWrites=true&w=majority';

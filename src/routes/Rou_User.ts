@@ -6,17 +6,9 @@ import aws from 'aws-sdk';
 export class User {
     model_user: Model<t.user.UserDocument>;
     router: Router;
-    // s3 stuff
-    s3: aws.S3;
     constructor(user: Model<t.user.UserDocument>) {
         this.model_user = user;
         this.router = express.Router();
-        this.s3 = new aws.S3();
-        this.s3.config.update({
-            // accessKeyId:'AKIA2GR6ZXDWD222C4N3',
-            // secretAccessKey:'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'
-            region: 'ap-south-1',
-        });
         this.initialize();
     }
 
